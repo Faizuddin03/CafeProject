@@ -1,91 +1,77 @@
-# Ghost AI
+# Cafe Landing Page
 
 ## Overview
 
-Ghost AI is a real-time collaborative system design workspace. Users describe a system in plain English, an AI agent maps that system onto a shared canvas, collaborators refine the architecture, and the app generates a technical specification from the resulting graph.
+The Cafe Landing Page is a modern, responsive single-page website that acts as the cafe's digital storefront. It attracts local customers by showcasing the cafe's atmosphere, highlighting menu items, providing location and operating-hour details, and offering a simple way to make reservations or inquiries.
 
 ## Goals
 
-1. Let authenticated users create and manage architecture projects.
-2. Provide a collaborative real-time canvas for system design.
-3. Let users import prebuilt starter system designs into the canvas.
-4. Let AI generate an initial architecture from a natural language prompt.
-5. Let collaborators refine the generated architecture.
-6. Convert the final graph into a persistent Markdown technical spec.
+1. Create a visually appealing and inviting online presence for the cafe.
+2. Showcase signature coffee blends, pastries, and seasonal menu items.
+3. Provide clear, accessible opening-hours and location information.
+4. Let customers book a table or contact the cafe through an online form.
+5. Ensure a seamless browsing experience across mobile, tablet, and desktop devices.
 
 ## Core User Flow
 
-1. User signs in.
-2. User creates or selects a project.
-3. User enters the project workspace.
-4. User optionally imports a starter system design template into the canvas.
-5. User prompts the AI to generate or extend the system design.
-6. AI generates nodes and edges in the shared canvas.
-7. Collaborators edit and refine the design.
-8. User triggers spec generation.
-9. App persists the generated Markdown spec.
-10. User reviews or downloads the spec.
+1. User lands on the homepage and sees a high-quality hero image or video with a clear tagline.
+2. User scrolls to explore featured menu items and daily specials.
+3. User reads a brief About section to learn about the cafe's story and atmosphere.
+4. User checks operating hours and location details.
+5. User fills out the reservation or contact form.
+6. The system validates the submitted input.
+7. The request is submitted to the cafe staff.
+8. User receives an on-screen success or confirmation message.
 
 ## Features
 
-### Authentication and Projects
+### Hero and Navigation
 
-- User sign-in and route protection.
-- Project creation, ownership, and collaborator access.
-- Project list and workspace navigation.
+- Sticky navigation for quick movement between page sections.
+- High-resolution background imagery or video showing the cafe interior.
+- Clear call-to-action directing users to the reservation form or menu.
 
-### Collaborative Canvas
+### Menu Showcase
 
-- Shared real-time canvas using Liveblocks and React Flow.
-- Live cursors, presence indicators, and node/edge editing.
-- Canvas snapshots persisted to the filesystem.
+- Curated grid layout for popular food and drink items.
+- High-quality photos with brief descriptions and pricing.
+- Badges or tags for dietary preferences such as vegan or gluten-free.
 
-### Starter System Designs
+### Reservation and Contact Form
 
-- A curated library of prebuilt system design templates.
-- Users can import a starter template into the canvas at any point during editing.
-- Templates are static canvas snapshots loaded directly into the active room.
-- Covers common patterns: monolith, microservices, event-driven, serverless, and more.
+- Form fields for name, email, date, time, and party size.
+- Validation for required fields and correct input formats.
+- Simple notification flow so cafe staff can receive new bookings or inquiries.
+- On-screen success and error states after submission.
 
-### AI Architecture Generation
+### Location and Footer
 
-- AI generates a system design from a user-supplied prompt.
-- Output is structured as canvas nodes and edges written into the shared room.
-- Generation runs as a durable background task.
-
-### Spec Generation
-
-- The current canvas graph is converted into a Markdown technical specification.
-- Specs are persisted as files and linked to the project in the database.
-- Users can view and download generated specs.
+- Embedded map or clear address link for directions.
+- Daily operating hours displayed in a prominent, scannable format.
+- Social links for platforms such as Instagram and Facebook.
 
 ## Scope
 
 ### In Scope
 
-- Authentication and route protection
-- Project creation and ownership
-- Collaborator access by project
-- Starter system design template library and import
-- Real-time shared canvas with nodes, edges, and presence
-- AI-powered architecture generation from prompts
-- AI-powered Markdown spec generation from the canvas graph
-- Persistent storage for project metadata and generated artifacts
-- Spec download
+- Cafe brand-focused UI/UX design.
+- Responsive frontend development using the project framework.
+- Static content, copywriting, and image placement.
+- Functional contact or reservation form with staff notification routing.
+- Basic SEO setup including metadata and image alt text.
 
 ### Out Of Scope
 
-- Billing and subscription systems
-- Enterprise permission tiers beyond owner and collaborator
-- Versioned spec history and review workflows
-- Production object storage migration
-- Mobile-native applications
+- Full ecommerce, online ordering, and payment processing.
+- Customer account creation and login systems.
+- Backend inventory or staff management systems.
+- Loyalty program tracking.
+- Mobile-native applications for iOS or Android.
 
 ## Success Criteria
 
-1. A signed-in user can create and open a project.
-2. Multiple users can collaborate in the same canvas simultaneously.
-3. A user can import a prebuilt starter design into the canvas.
-4. AI can generate an architecture into the shared room from a prompt.
-5. The graph can be converted into a persisted Markdown spec.
-6. Project metadata and generated artifacts are stored in the correct layers.
+1. The landing page loads quickly, targeting under 3 seconds on standard connections.
+2. The design is fully responsive and polished on mobile devices.
+3. Visitors can submit the reservation or contact form without validation errors when inputs are valid.
+4. Form submissions are reliably routed to the cafe staff notification channel.
+5. Essential information such as menu highlights, hours, and location is highly visible and accurate.

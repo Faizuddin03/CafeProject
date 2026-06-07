@@ -1,2 +1,50 @@
 @import "tailwindcss";
 
+:root {
+  --bg-base: #fafcfd;
+  --bg-surface: #ffffff;
+  --bg-subtle: #dbecf4;
+  --bg-dark: #1d3d52;
+  --border-default: #dbecf4;
+  --text-primary: #1d3d52;
+  --text-secondary: #5f84a1;
+  --accent-primary: #125488;
+  --accent-secondary: #2a93d5;
+  --accent-warm: #d4a373;
+  --state-error: #e11d48;
+  --state-success: #10b981;
+}
+
+@theme inline {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-subtle: var(--bg-subtle);
+  --color-dark: var(--bg-dark);
+  --color-surface-border: var(--border-default);
+  --color-border-default: var(--border-default);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-copy-primary: var(--text-primary);
+  --color-copy-secondary: var(--text-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-brand: var(--accent-primary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-warm: var(--accent-warm);
+  --color-state-error: var(--state-error);
+  --color-state-success: var(--state-success);
+  --font-sans: var(--font-inter);
+  --font-tempting: var(--font-tempting);
+}
+
+html {
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}

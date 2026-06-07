@@ -1,105 +1,98 @@
-# UI Context
+# UI Context: Cafe Landing Page
 
 ## Theme
 
-Dark only. No light mode. The visual language is a dark technical workspace — near-black backgrounds, layered surfaces, and vivid accent colors for interactive elements.
+Light, airy, and inviting. The visual language uses a modern, cool-toned blue palette balanced with clean white space and warm, coffee-inspired accent colors to create a welcoming coastal or contemporary cafe atmosphere.
 
-All colors are defined as CSS custom properties in `globals.css` and mapped to Tailwind tokens via `@theme inline`. Components must use these tokens — no hardcoded hex values or raw Tailwind color classes like `zinc-*`.
+All colors are defined as CSS custom properties in `globals.css` and mapped to Tailwind tokens via `@theme inline`. Components must use these tokens; do not hardcode hex values or use raw Tailwind color classes like `zinc-*`.
 
-| Role             | CSS Variable           | Hex / Value               |
-| ---------------- | ---------------------- | ------------------------- |
-| Page background  | `--bg-base`            | `#080809`                 |
-| Surface          | `--bg-surface`         | `#111114`                 |
-| Elevated surface | `--bg-elevated`        | `#18181c`                 |
-| Subtle surface   | `--bg-subtle`          | `#1e1e23`                 |
-| Default border   | `--border-default`     | `#2a2a30`                 |
-| Subtle border    | `--border-subtle`      | `#3a3a42`                 |
-| Primary text     | `--text-primary`       | `#f0f0f4`                 |
-| Secondary text   | `--text-secondary`     | `#c0c0cc`                 |
-| Muted text       | `--text-muted`         | `#808090`                 |
-| Faint text       | `--text-faint`         | `#505060`                 |
-| Brand accent     | `--accent-primary`     | `#00c8d4` (cyan)          |
-| Brand dim        | `--accent-primary-dim` | `rgba(0, 200, 212, 0.12)` |
-| AI accent        | `--accent-ai`          | `#6457f9` (indigo-purple) |
-| AI text          | `--accent-ai-text`     | `#8b82ff`                 |
-| Error            | `--state-error`        | `#ff4d4f`                 |
-| Success          | `--state-success`      | `#34d399`                 |
-| Warning          | `--state-warning`      | `#fbbf24`                 |
+| Role            | CSS Variable         | Hex / Value | Notes                                    |
+| --------------- | -------------------- | ----------- | ---------------------------------------- |
+| Page background | `--bg-base`          | `#FAFCFD`   | Soft off-white for the main body         |
+| Surface         | `--bg-surface`       | `#FFFFFF`   | White for cards and containers           |
+| Subtle surface  | `--bg-subtle`        | `#DBECF4`   | Soft light blue                          |
+| Dark surface    | `--bg-dark`          | `#1D3D52`   | For footers and dark sections            |
+| Default border  | `--border-default`   | `#DBECF4`   | Matches the subtle surface               |
+| Primary text    | `--text-primary`     | `#1D3D52`   | Dark navy                                |
+| Secondary text  | `--text-secondary`   | `#5F84A1`   | Muted blue-gray                          |
+| Brand primary   | `--accent-primary`   | `#125488`   | Deep blue                                |
+| Brand secondary | `--accent-secondary` | `#2A93D5`   | Vibrant blue for hover and active states |
+| Warm accent     | `--accent-warm`      | `#D4A373`   | Caramel latte accent for key CTAs        |
+| Error           | `--state-error`      | `#E11D48`   | Rose red                                 |
+| Success         | `--state-success`    | `#10B981`   | Emerald green                            |
 
-Tailwind utility names map to these variables. Use `bg-base`, `bg-surface`, `text-copy-primary`, `text-copy-muted`, `border-surface-border`, `text-brand`, `bg-accent-dim`, etc.
+Tailwind utility names map to these variables. Use utilities such as `bg-base`, `bg-surface`, `bg-subtle`, `bg-dark`, `text-primary`, `text-secondary`, `bg-accent-primary`, `hover:bg-accent-secondary`, and `text-accent-warm`.
 
 ## Typography
 
-| Role      | Font       | CSS Variable        |
-| --------- | ---------- | ------------------- |
-| UI text   | Geist Sans | `--font-geist-sans` |
-| Code/mono | Geist Mono | `--font-geist-mono` |
+A mix of expressive Tempting headings and clean sans-serif body text creates an artisanal cafe feel while keeping the experience readable and modern.
 
-Both fonts are loaded via `next/font/google` and applied as CSS variables on the `<html>` element. The base `body` uses Geist Sans with `antialiased`.
+| Role     | Font     | CSS Variable      |
+| -------- | -------- | ----------------- |
+| Headings | Tempting | `--font-tempting` |
+| Body/UI  | Inter    | `--font-inter`    |
+
+Heading and body fonts are applied as CSS variables on the `<html>` element. The base `body` uses Inter with `antialiased`.
 
 ## Border Radius
 
-Radius increases with surface depth — smaller for inner elements, larger for outer containers.
+Soft rounded forms should make the interface feel welcoming and organic.
 
-| Context           | Class         |
-| ----------------- | ------------- |
-| Inline / small UI | `rounded-xl`  |
-| Cards / panels    | `rounded-2xl` |
-| Modal / overlay   | `rounded-3xl` |
+| Context          | Class          |
+| ---------------- | -------------- |
+| Buttons / badges | `rounded-full` |
+| Images / cards   | `rounded-2xl`  |
+| Large sections   | `rounded-3xl`  |
 
-## Canvas
+## Imagery and Visuals
 
-### Node Color Palette
+### Photography
 
-8 defined color pairs. Each pair specifies a dark node fill and a vivid contrasting text color tuned for readability on the dark canvas. Defined in `types/canvas.ts` as `NODE_COLORS`.
+Images should be bright and warm to balance the cool blue UI. Prioritize high-quality photos of coffee cups, latte art, pastries, cafe interiors, baristas, and inviting seating areas.
 
-| Node fill | Text color | Character              |
-| --------- | ---------- | ---------------------- |
-| `#1F1F1F` | `#EDEDED`  | Neutral dark (default) |
-| `#10233D` | `#52A8FF`  | Blue                   |
-| `#2E1938` | `#BF7AF0`  | Purple                 |
-| `#331B00` | `#FF990A`  | Orange                 |
-| `#3C1618` | `#FF6166`  | Red                    |
-| `#3A1726` | `#F75F8F`  | Pink                   |
-| `#0F2E18` | `#62C073`  | Green                  |
-| `#062822` | `#0AC7B4`  | Teal                   |
+### Decorative Elements
 
-Default node color: `#1F1F1F` with `#EDEDED` text.
-
-### Edge Style
-
-Smooth-step path with an arrow marker. Default edge color: `#f8fafc`. Stroke width is thin — edges are visually secondary to nodes.
-
-### Node Shapes
-
-6 supported shapes, defined in `types/canvas.ts` as `NODE_SHAPES`. Complex shapes (diamond, hexagon, cylinder) are rendered as inline SVGs rather than CSS borders.
-
-- `rectangle` — default general-purpose node
-- `diamond` — decision / gateway
-- `circle` — event / endpoint
-- `pill` — service / process
-- `cylinder` — database / storage
-- `hexagon` — external system / boundary
-
-### Connection Handles
-
-Small white circular handles, hidden by default, revealed on node hover. Appear at all four sides of a node.
-
-### Canvas Background
-
-React Flow `<Background>` component. Canvas sits on the base background color.
+- Use subtle dividers with `--border-default` or gentle wavy section separators.
+- When placing text over hero imagery, add a gradient overlay fading toward `--bg-dark` so white text remains readable.
+- Avoid decorative gradient orbs, abstract blobs, and overly technical visuals that conflict with the cafe atmosphere.
 
 ## Component Library
 
-shadcn/ui on top of Tailwind. No custom design system. Components live in `components/ui/`. Use the `shadcn` CLI to add new components rather than writing them from scratch.
+shadcn/ui on top of Tailwind. Components live in `components/ui/`. Use the `shadcn` CLI to add new foundation components rather than writing them from scratch.
+
+### Key Cafe Components
+
+- Buttons: primary buttons use `--accent-primary` with `--accent-secondary` on hover. Use `--accent-warm` for high-priority actions such as "Order Now", reservations, or featured menu CTAs.
+- Cards: menu items, testimonials, and compact information blocks use `--bg-surface`, subtle shadow, `rounded-2xl`, and `--border-default`.
+- Badges: dietary labels, seasonal notes, and menu categories use `rounded-full` with tokenized background and text colors.
 
 ## Layout Patterns
 
-- Editor workspace: full-viewport layout — floating sidebar overlay on the left, center canvas, slide-over AI sidebar on the right.
-- Sidebars: floating overlay with dark semi-transparent background and subtle border.
-- Modals and dialogs: centered overlay, `rounded-3xl`, dark background with backdrop blur.
-- Navbar: top bar with dark background and bottom border.
+- Navbar: sticky top bar with a transparent initial state that transitions to `bg-surface` with subtle blur and border on scroll. Include logo, section links such as Menu, About, and Location, plus an "Order Now" or reservation CTA.
+- Hero section: full-width viewport header using high-quality cafe photography, a readable overlay, a bold `font-tempting` heading, short supporting copy, and two clear CTA buttons.
+- Menu preview: responsive grid of coffee, pastry, and seasonal items with photos, descriptions, pricing, and optional dietary or seasonal badges. Use `--bg-base` as the section background.
+- About / atmosphere: split layout with text and photography. Use `--bg-subtle` to break up the page flow.
+- Reservation / contact: clear form area with accessible labels, validation states, and success/error feedback using the state tokens.
+- Location: scannable address, hours, phone/email, and map or directions link.
+- Footer: `--bg-dark` with light text using `--bg-subtle` or white. Include opening hours, address, contact info, and social links.
+
+## Responsive Device Support
+
+The website must be usable and polished across mobile phones, tablets, laptops, and desktop monitors. Layouts should be designed mobile-first, then progressively enhance spacing, grid density, media placement, and navigation behavior for larger viewports.
+
+- Mobile: prioritize stacked content, readable text, tap-friendly buttons, simplified navigation, and media that crops intentionally without hiding important cafe details.
+- Tablet: use balanced two-column layouts where space allows, while preserving comfortable touch targets and readable form controls.
+- Desktop: use wider grids, richer photography placement, and expanded navigation without making sections feel sparse or oversized.
+- Forms, buttons, cards, navigation, maps, and hero content must remain readable, reachable, and free from overlap at common viewport widths.
 
 ## Icons
 
-Lucide React. Stroke-based icons only — no filled variants. Icon sizes: `h-4 w-4` for inline, `h-5 w-5` for buttons, `h-8 w-8` for feature icons in empty states.
+Lucide React. Use stroke-based icons only.
+
+| Context         | Size      |
+| --------------- | --------- |
+| Inline UI       | `h-4 w-4` |
+| Buttons         | `h-5 w-5` |
+| Feature accents | `h-6 w-6` |
+
+Icon color should usually use `--accent-primary` or `--accent-warm` for visual interest. Common cafe icons include coffee, croissant or bakery, map pin, clock, phone, mail, Instagram, and Wi-Fi.
